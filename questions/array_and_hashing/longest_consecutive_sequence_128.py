@@ -13,7 +13,7 @@ class Solution:
         #         max_length = max(max_length, current_length)
         # return max_length
 
-        numSet = set(nums)
+        numSet = set(nums) #converting to set for faster lookups
         longest = 0
 
         for num in numSet:
@@ -27,7 +27,7 @@ class Solution:
         nums = [100, 4, 200, 1, 3, 2]
         o/p : 4
 
-        Brute force:
+        Brute force (this) :
             counter() = 0
             sort(nums)
             0 to (n-1)
@@ -43,5 +43,17 @@ class Solution:
         nums = [100, 4, 200, 1, 3, 2]
         num_set = {100, 4, 200, 1, 3, 2}
 
-
+        process 100 : num - 1 (check for 99) -> not there
+            num = 100
+            current_length = 1
+            check num + 1 (101) in set
+            not found
+        process 4 : num - 1 (check for 3) - found it
+            skip
+        process 200 : same as 100
+        process 1 : num - 1 (check for 0) -> not there
+            this is the start
+            sequence : 1 - 2 - 3 - 4
+            length : 4
+        check for the rest of the nums as well
         '''
