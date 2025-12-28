@@ -9,11 +9,17 @@ class Solution:
         for i in range(1, len(prices)):
             current_price = prices[i]
 
+            if current_price < min_price:
+                min_price = current_price
+
             current_profit = current_price - min_price
 
-            max_profit = max(max_profit, current_profit)
+            if current_profit > max_profit:
+                max_profit = current_profit
 
-            min_price = min(min_price, current_price)
+            # max_profit = max(max_profit, current_profit)
+
+            # min_price = min(min_price, current_price)
 
         return max_profit
         '''
