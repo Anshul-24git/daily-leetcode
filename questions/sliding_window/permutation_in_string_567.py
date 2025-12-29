@@ -10,6 +10,7 @@ class Solution:
         window_size = len(s1)
         window_freq = {}
 
+        # first window
         for i in range(window_size):
             char = s2[i]
             window_freq[char] = window_freq.get(char, 0) + 1
@@ -17,6 +18,7 @@ class Solution:
         if window_freq == s1_freq:
             return True
 
+        # slide the window
         for i in range(window_size, len(s2)):
             new_char = s2[i]
             window_freq[new_char] = window_freq.get(new_char, 0) + 1
